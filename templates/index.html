@@ -55,20 +55,22 @@
       <div class="table-container">
         <table class="table">
           <tr>
-            <th class="caption" colspan="3">Todays Items</th>
+            <th class="caption" colspan="4">Todays Items</th>
           </tr>
 
           <tr class="heading">
             <th>No.</th>
             <th>Title</th>
             <th>Amount</th>
+            <th>Category</th>
           </tr>
 
           {% for data in datas %}
           <tr>
             <td>{{loop.index}}</td>
             <td>{{data[0]}}</td>
-            <td>{{data[1]}}</td>
+            <td>{{data[1]}} ETB</td>
+            <td>{{data[2]}}</td>
           </tr>
           {% endfor %}
           <!-- 
