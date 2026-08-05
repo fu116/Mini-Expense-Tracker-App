@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <img class="logo" src="/static/logo.svg" alt="tracker-logo" />
+        <h1 class="welcome">
+          Welcome To FUAD'S Mini Expense
+          <span class="span"> Tracker APP </span>
+        </h1>
+      </header>
+
+      <div class="title-box">
+        <h2 class="header__title">Add Daily Expense</h2>
+      </div>
+      <form class="form" method="post">
+        <p class="parent-one">
+          <label class="form-lable" for="title">Title :</label>
+          <input
+            class="entry-1"
+            type="text"
+            name="title"
+            id="title"
+            placeholder="coffe"
+          />
+        </p>
+        <p class="parent-one">
+          <label class="form-lable" for="amount">Amount:</label>
+          <input
+            class="entry-2"
+            type="text"
+            name="amount"
+            id="amount"
+            placeholder="coffe price"
+          />
+        </p>
+        <p>
+          <select class="select" name="category" id="categories">
+            <option name="" value="Food">Food</option>
+            <option name="" value="Transport">Transport</option>
+            <option name="" value="SCHOOL">Schools</option>
+            <option name="" value="Entertainment">Entertainment</option>
+          </select>
+        </p>
+        <p>
+          <button class="Add__button" type="submit">Add Item</button>
+        </p>
+      </form>
+      <div class="table-container">
+        <table class="table">
+          <tr>
+            <th class="caption" colspan="3">Todays Items</th>
+          </tr>
+
+          <tr class="heading">
+            <th>No.</th>
+            <th>Title</th>
+            <th>Amount</th>
+          </tr>
+
+          {% for data in datas %}
+          <tr>
+            <td>{{loop.index}}</td>
+            <td>{{data[0]}}</td>
+            <td>{{data[1]}}</td>
+          </tr>
+          {% endfor %}
+          <!-- 
+        <tr>
+          <td>2.</td>
+          <td>Coffee</td>
+          <td>50 ETB</td>
+        </tr>
+
+        <tr>
+          <td>3.</td>
+          <td>Candy</td>
+          <td>20 ETB</td>
+        </tr> -->
+
+          <!-- <tr>
+          <td colspan="3" class="total">Todays Total : 320.00 ETB</td>
+        </tr> -->
+        </table>
+      </div>
+      <button class="last_button" type="submit">Submit Today's Expense</button>
+    </main>
+  </body>
+</html>
